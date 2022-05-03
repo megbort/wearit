@@ -1,6 +1,4 @@
-/*****************************************************
-    WearIt - Javascript - Megan Krenbrink - Oct.18.21
- ****************************************************/
+// NAVIGATION MANU
 
 function toggleMenu() {
     var menu = document.getElementById("myLinks");
@@ -20,5 +18,19 @@ function updateNav(windowSize) {
     }
 }
 
-var windowSize = window.matchMedia("(max-width: 670px)"); // Call listener function at run time
-windowSize.addListener(updateNav); // Attach listener function when the window size changes    
+// Call listener function at run time
+var windowSize = window.matchMedia("(max-width: 670px)"); 
+// Attach listener function when the window size changes    
+windowSize.addListener(updateNav); 
+
+
+// FLICKITY SLIDER
+
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'center',
+  contain: true,
+  wrapAround: true,
+  autoPlay: true,
+  pauseAutoPlayOnHover: false 
+});
