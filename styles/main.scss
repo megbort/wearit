@@ -265,14 +265,21 @@ section:nth-child(1) {
   left: 365px;
 }
 
-
 /***************************************************
     FEATURED CAROUSEL
 ****************************************************/
+.main-carousel {
+  border-radius: 20px;
+}
+
 .carousel-cell {
   width: 100%;
   height: 500px;
   @include flex-center-all;
+}
+
+.carousel-img {
+  border-radius: 20px;
 }
 
 .carousel-content {
@@ -283,7 +290,7 @@ section:nth-child(1) {
 }
 
 /***************************************************
-   CATEGORY GRID
+   PRODUCTS GRID
 ****************************************************/
 .is-grid {
   display: grid;
@@ -302,6 +309,7 @@ section:nth-child(1) {
   color: $colour-white;
   font-size: 26px;
   font-weight: 900;
+  border-radius: 10px;
 }
 
 .grid-item:hover {
