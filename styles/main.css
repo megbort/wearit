@@ -243,20 +243,12 @@ section:nth-child(1) {
 /***************************************************
     FEATURED CAROUSEL
 ****************************************************/
-.main-carousel {
-  border-radius: 20px;
-}
-
 .carousel-cell {
   width: 100%;
   height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.carousel-img {
-  border-radius: 20px;
 }
 
 .carousel-content {
