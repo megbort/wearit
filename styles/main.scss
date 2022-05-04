@@ -1,4 +1,4 @@
-// VARIABLES
+// VARIABLES //
 $font-family: Comfortaa, sans-serif;
 
 // Colour Palette
@@ -11,6 +11,29 @@ $colour-white: #FFF;
 $colour-black: #202020;
 $colour-grey: #202020;
 
+// MIXINS //
+@mixin btn {
+  font-family: $font-family;
+  border: none;
+  border-radius: 24px;
+  text-transform: uppercase;
+  width: 215px;
+  padding: 14px 0px;
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@mixin hero-position {
+  height: 75vh;
+  position: relative;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /***************************************************
   GLOBAL STYLES
 ****************************************************/
@@ -44,17 +67,9 @@ section:nth-child(1) {
 }
 
 .btn-1 {
+  @include btn;
   color: $colour-white;
   background: $colour-pink;
-  border: none;
-  border-radius: 24px;
-  text-transform: uppercase;
-  width: 215px;
-  padding: 14px 0px;
-  margin: 20px 0;
-  font-family: $font-family;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .btn-1:hover {
@@ -62,17 +77,9 @@ section:nth-child(1) {
 }
 
 .btn-2 {
+  @include btn;
   color: $colour-white;
   background: $colour-mint;
-  border: none;
-  border-radius: 24px;
-  text-transform: uppercase;
-  width: 215px;
-  padding: 14px 0px;
-  margin: 20px 0;
-  font-family: $font-family;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .btn-2:hover {
@@ -118,39 +125,41 @@ section:nth-child(1) {
 /***************************************************
    GOLBAL NAVIGATION
 ****************************************************/
-.gn ul {
-  text-align: right;
-}
+.gn {
+  ul {
+    text-align: right;
+  }
 
-.gn li {
-  display: inline-block;
-  font-size: 22px;
-  font-weight: 700;
-  padding: 20px;
-}
+  li {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 20px;
+  }
 
-.gn a {
-  color: $colour-red;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+  a {
+    color: $colour-red;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
 
-.gn li a:hover {
-  color: #8dd7bf;
-}
+  li a:hover {
+    color: #8dd7bf;
+  }
 
-.gn img {
-  max-width: 32px;
-}
+  img {
+    max-width: 32px;
+  }
 
-.gn a img:hover {
-  color: transparent;
-  filter: invert(79%) sepia(30%) saturate(200%) hue-rotate(10deg) brightness(100%) contrast(300%);
-  transition: 0.3s ease;
-}
+  a img:hover {
+    color: transparent;
+    filter: invert(79%) sepia(30%) saturate(200%) hue-rotate(10deg) brightness(100%) contrast(300%);
+    transition: 0.3s ease;
+  }
 
-.gn a.icon {
-  display: none;
+  a.icon {
+    display: none;
+  }
 }
 
 /***************************************************
@@ -170,20 +179,17 @@ section:nth-child(1) {
 
 .bg-img-mens {
   background-image: url(../images/man-sitting.jpg);
-  height: 80vh;
-  position: relative;
+  @include hero-position;
 }
 
 .bg-img-womens {
   background-image: url(../images/girl-leaning.jpg);
-  height: 80vh;
-  position: relative;
+  @include hero-position;
 }
 
 .bg-img-about {
   background-image: url(../images/about-us-banner.jpeg);
-  height: 80vh;
-  position: relative;
+  @include hero-position;
 }
 
 .bnr-content.is-flex {
@@ -255,7 +261,7 @@ section:nth-child(1) {
   content: ">";
   color: $colour-pink;
   font-size: 80px;
-  top: 280px;
+  top: 350px;
   left: 365px;
 }
 
@@ -263,22 +269,17 @@ section:nth-child(1) {
 /***************************************************
     FEATURED CAROUSEL
 ****************************************************/
-
 .carousel-cell {
   width: 100%;
   height: 500px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center-all;
 }
 
 .carousel-content {
   position: absolute;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  @include flex-center-all;
   flex-direction: column;
+  text-align: center;
 }
 
 /***************************************************
@@ -295,9 +296,7 @@ section:nth-child(1) {
 }
 
 .grid-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center-all;
   background: $colour-pink;
   opacity: .8;
   color: $colour-white;
@@ -318,24 +317,20 @@ section:nth-child(1) {
 }
 
 .grid-item img {
-  width: 150px;
+  width: 120px;
 }
 
 /***************************************************
    NEWSLETTER SUBSCRIPTION
 ****************************************************/
 .newsletter {
+  @include flex-center-all;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 50px 0;
 }
 
 .email-sub {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-all;
   padding: 20px;
   font-size: 24px;
 }
@@ -396,37 +391,38 @@ input[type="text"] {
   font-size: 14px;
   line-height: 2.5;
   padding: 80px 20px 20px 0px;
+  h4 {
+      font-size: 18px;
+    }
+
+  h6 {
+      font-size: 14px;
+      text-align: center;
+    }
+
+  a {
+      text-decoration: none;
+      color: $colour-white;
+    }
+
+  a:hover {
+      color: $colour-pink;
+    }
 }
 
-.ftr h4 {
-  font-size: 18px;
-}
+.socials {
+  ul {
+    text-align: center;
+  }
 
-.ftr h6 {
-  font-size: 14px;
-  text-align: center;
-}
+  li {
+    display: inline-block;
+    padding: 40px 20px;
+  }
 
-.ftr a {
-  text-decoration: none;
-  color: $colour-white;
-}
-
-.ftr a:hover {
-  color: $colour-pink;
-}
-
-.socials ul {
-  text-align: center;
-}
-
-.socials li {
-  display: inline-block;
-  padding: 40px 20px;
-}
-
-.socials li a:hover {
-  filter: invert(45%) sepia(19%) saturate(4190%) hue-rotate(322deg) brightness(105%) contrast(99%);
+  li a:hover {
+    filter: invert(45%) sepia(19%) saturate(4190%) hue-rotate(322deg) brightness(105%) contrast(99%);
+  }
 }
 
 /***************************************************

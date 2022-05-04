@@ -13,7 +13,7 @@
   <link rel="shortcut icon" type="image/jpg" href="favicon.ico">
 </head>
 
-<body>
+<body onload="closeNav()">
   <header class="hdr is-flex">
     <div class="logo-wrap is-flex-25">
       <a href="index.html" title="Home">
@@ -52,8 +52,14 @@
           <p>Now available for iPhone and Android.</p>
           <button class="btn-1">Download Now</button>
           <div class="scroll-pos">
-            <a href="#stn-1"><img src="images/down-chevron-white.png" alt="Down Arrow Icon" class="down-chevron"></a>
+            <a href="#scroll"><img src="images/down-chevron-white.png" alt="Down Arrow Icon" class="down-chevron"></a>
           </div>
+        </div>
+      </div>
+      <div id="scroll" class="bnr-ad is-flex">
+        <div>
+          <p><strong>SALE JULY 25 - AUGUST 10</strong></p>
+          <p>Take up to 25% off on selected summer styles!</p>
         </div>
       </div>
     </section>
@@ -185,6 +191,8 @@
     </div>
     <h6>Copyright 2021 WearIt Inc.</h6>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 
